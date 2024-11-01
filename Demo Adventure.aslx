@@ -1,22 +1,22 @@
+<!--Saved by Quest 5.8.6836.13983-->
 <asl version="580">
-
-  <include ref="English.aslx"/>
-  <include ref="Core.aslx"/>
-
+  <include ref="English.aslx" />
+  <include ref="Core.aslx" />
   <game name="Demo Adventure">
     <gameid>891fb2cb-2b65-4edf-bf66-e2bed8df4480</gameid>
     <version>1.0</version>
     <firstpublished>2024</firstpublished>
+    <author>James Parrott</author>
+    <category>Surreal</category>
   </game>
-
-  <object name="room">
+  <object name="lounge">
     <inherit name="editor_room" />
     <isroom />
-
+    <dropdestination type="object">lounge</dropdestination>
+    <description>This is a very bland lounge with an old beige carpet and beige wallpaper.</description>
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
     </object>
   </object>
-
 </asl>
