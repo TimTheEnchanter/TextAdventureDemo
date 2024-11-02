@@ -44,6 +44,11 @@
       <look>The Sunday Edition of the Whoville Examiner.</look>
       <read>Who writes this junk?</read>
     </object>
+    <object name="wallpaper">
+      <inherit name="editor_object" />
+      <scenery />
+      <look>The horrible beige wallpaper hangs loosely on the walls.</look>
+    </object>
   </object>
   <object name="kitchen">
     <inherit name="editor_room" />
