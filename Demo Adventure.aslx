@@ -18,5 +18,14 @@
       <inherit name="editor_object" />
       <inherit name="editor_player" />
     </object>
+    <exit alias="south" to="kitchen">
+      <inherit name="southdirection" />
+    </exit>
+  </object>
+  <object name="kitchen">
+    <inherit name="editor_room" />
+    <exit alias="north" to="lounge">
+      <inherit name="northdirection" />
+    </exit>
   </object>
 </asl>
