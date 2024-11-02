@@ -49,6 +49,17 @@
       <scenery />
       <look>The horrible beige wallpaper hangs loosely on the walls.</look>
     </object>
+    <object name="carpet">
+      <inherit name="editor_object" />
+      <look>What a surprise the carpet is beige too.</look>
+    </object>
+    <object name="Bob">
+      <inherit name="editor_object" />
+      <inherit name="male" />
+      <look>Bob is lying on the floor, a lot more still than usual.</look>
+      <usedefaultprefix type="boolean">false</usedefaultprefix>
+      <alias>Bob</alias>
+    </object>
   </object>
   <object name="kitchen">
     <inherit name="editor_room" />
