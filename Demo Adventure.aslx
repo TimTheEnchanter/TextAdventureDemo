@@ -30,6 +30,20 @@
       <look>The TV is an old model, possibly 20 years old. It is currently showing an old western.</look>
       <watch>You watch for a few minutes. As your will to live slowly ebbs away, you remember that you’ve always hated watching westerns.</watch>
     </object>
+    <object name="sofa">
+      <inherit name="editor_object" />
+      <sit>The bland exterior belies the fact that it is actually rather comfortable.</sit>
+      <look>Visually speaking this couch is a rather bland shade of grey.</look>
+    </object>
+    <object name="table">
+      <inherit name="editor_object" />
+      <look>A non-descript wooden table.</look>
+    </object>
+    <object name="newspaper">
+      <inherit name="editor_object" />
+      <look>The Sunday Edition of the Whoville Examiner.</look>
+      <read>Who writes this junk?</read>
+    </object>
   </object>
   <object name="kitchen">
     <inherit name="editor_room" />
