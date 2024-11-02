@@ -21,6 +21,15 @@
     <exit alias="south" to="kitchen">
       <inherit name="southdirection" />
     </exit>
+    <object name="TV">
+      <inherit name="editor_object" />
+      <alt type="stringlist">
+        <value>television</value>
+        <value>telly</value>
+      </alt>
+      <look>The TV is an old model, possibly 20 years old. It is currently showing an old western.</look>
+      <watch>You watch for a few minutes. As your will to live slowly ebbs away, you remember that you’ve always hated watching westerns.</watch>
+    </object>
   </object>
   <object name="kitchen">
     <inherit name="editor_room" />
@@ -28,4 +37,9 @@
       <inherit name="northdirection" />
     </exit>
   </object>
+  <verb>
+    <property>watch</property>
+    <pattern>watch</pattern>
+    <defaultexpression>"You can't watch " + object.article + "."</defaultexpression>
+  </verb>
 </asl>
