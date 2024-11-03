@@ -23,12 +23,16 @@
     </exit>
     <object name="TV">
       <inherit name="editor_object" />
+      <inherit name="switchable" />
       <alt type="stringlist">
         <value>television</value>
         <value>telly</value>
       </alt>
       <look>The TV is an old model, possibly 20 years old. It is currently showing an old western.</look>
       <watch>You watch for a few minutes. As your will to live slowly ebbs away, you remember that you’ve always hated watching westerns.</watch>
+      <feature_switchable />
+      <switchedondesc>It is currently showing an old western.</switchedondesc>
+      <switchedoffdesc>It is currently switched off.</switchedoffdesc>
     </object>
     <object name="sofa">
       <inherit name="editor_object" />
@@ -43,6 +47,8 @@
       <inherit name="editor_object" />
       <look>The Sunday Edition of the Whoville Examiner.</look>
       <read>Who writes this junk?</read>
+      <take />
+      <takemsg>You fold the newspaper and place it neatly under your arm</takemsg>
     </object>
     <object name="wallpaper">
       <inherit name="editor_object" />
