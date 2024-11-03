@@ -66,6 +66,15 @@
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <alias>Bob</alias>
     </object>
+    <object name="lamp">
+      <inherit name="editor_object" />
+      <inherit name="switchable" />
+      <look>An old lamp.</look>
+      <feature_switchable />
+      <switchedon />
+      <switchedondesc>The lamp is on.</switchedondesc>
+      <switchedoffdesc>The lamp is off.</switchedoffdesc>
+    </object>
   </object>
   <object name="kitchen">
     <inherit name="editor_room" />
