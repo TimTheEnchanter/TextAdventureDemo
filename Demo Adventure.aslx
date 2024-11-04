@@ -29,7 +29,14 @@
         <value>telly</value>
       </alt>
       <look>The TV is an old model, possibly 20 years old. It is currently showing an old western.</look>
-      <watch>You watch for a few minutes. As your will to live slowly ebbs away, you remember that you’ve always hated watching westerns.</watch>
+      <watch type="script">
+        if (IsSwitchedOn(TV)) {
+          msg ("You watch for a few minutes. As your will to live slowly ebbs away, you remember that you’ve always hated watching westerns.")
+        }
+        else {
+          msg ("You watch for a few minutes, thinking that the latest episode of ‘Big Brother’ is even more boring than usual. You then realise that the TV is in fact switched off.")
+        }
+      </watch>
       <feature_switchable />
       <switchedondesc>It is currently showing an old western.</switchedondesc>
       <switchedoffdesc>It is currently switched off.</switchedoffdesc>
@@ -58,6 +65,7 @@
     <object name="carpet">
       <inherit name="editor_object" />
       <look>What a surprise the carpet is beige too.</look>
+      <scenery />
     </object>
     <object name="Bob">
       <inherit name="editor_object" />
