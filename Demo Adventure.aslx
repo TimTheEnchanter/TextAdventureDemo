@@ -118,9 +118,20 @@
     <defaultexpression>"You can't watch " + object.article + "."</defaultexpression>
   </verb>
   <command name="say">
-    <pattern>say #text#</pattern>
+    <pattern>say #text#; shout #text#; yell #text#</pattern>
     <script>
       msg ("You say \"" + text + "\", but nobody replies.")
+    </script>
+  </command>
+  <command name="weigh">
+    <pattern>weigh #object#</pattern>
+    <script>
+      if (HasAttribute(object, "weight")) {
+        msg ("It weighs " + object.weight + " grams.")
+      }
+      else {
+        msg ("You can't weigh that.")
+      }
     </script>
   </command>
 </asl>
