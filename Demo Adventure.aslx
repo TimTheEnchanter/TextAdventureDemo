@@ -117,4 +117,10 @@
     <pattern>watch</pattern>
     <defaultexpression>"You can't watch " + object.article + "."</defaultexpression>
   </verb>
+  <command name="say">
+    <pattern>say #text#</pattern>
+    <script>
+      msg ("You say \"" + text + "\", but nobody replies.")
+    </script>
+  </command>
 </asl>
