@@ -86,9 +86,28 @@
   </object>
   <object name="kitchen">
     <inherit name="editor_room" />
+    <description>The kitchen is cold and the stench of the overflowing bin makes you feel somewhat faint.</description>
     <exit alias="north" to="lounge">
       <inherit name="northdirection" />
     </exit>
+    <object name="bin">
+      <inherit name="editor_object" />
+      <scenery />
+      <look>The bin is overflowing with garbage.</look>
+    </object>
+    <object name="flour">
+      <inherit name="editor_object" />
+      <weight type="int">500</weight>
+    </object>
+    <object name="eggs">
+      <inherit name="editor_object" />
+      <inherit name="plural" />
+      <weight type="int">250</weight>
+    </object>
+    <object name="sugar">
+      <inherit name="editor_object" />
+      <weight type="int">1000</weight>
+    </object>
   </object>
   <verb>
     <property>watch</property>
