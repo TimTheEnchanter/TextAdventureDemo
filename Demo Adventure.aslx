@@ -104,7 +104,7 @@
       <inherit name="plural" />
       <weight type="int">250</weight>
       <look type="script">
-        msg ( "A box of eggs, weighing " + eggs.weight + " grams.")
+        msg ( "A carton of eggs, weighing " + eggs.weight + " grams.")
       </look>
     </object>
     <object name="sugar">
