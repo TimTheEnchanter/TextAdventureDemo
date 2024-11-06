@@ -83,8 +83,7 @@
       <feature_usegive />
       <useon type="scriptdictionary">
         <item key="defibrillator">
-          msg ("Miraculously, the defibrillator lived up to its promise, and Bob is now alive again. He says his head feels kind of fuzzy.")
-          SetObjectFlagOn (Bob, "alive")
+          revive bob
         </item>
       </useon>
     </object>
@@ -153,4 +152,8 @@
       }
     </script>
   </command>
+  <function name="revive bob">
+    msg ("Miraculously, the defibrillator lived up to its promise, and Bob is now alive again. He says his head feels kind of fuzzy.")
+    SetObjectFlagOn (Bob, "alive")
+  </function>
 </asl>
