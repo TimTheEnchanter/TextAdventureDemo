@@ -70,9 +70,23 @@
     <object name="Bob">
       <inherit name="editor_object" />
       <inherit name="male" />
-      <look>Bob is lying on the floor, a lot more still than usual.</look>
+      <look type="script">
+        if (GetBoolean(Bob, "alive")) {
+          msg ("Bob is sitting up, appearing to feel somewhat under the weather")
+        }
+        else {
+          msg ("Bob is lying on the floor, a lot more still than usual.")
+        }
+      </look>
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <alias>Bob</alias>
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="defibrillator">
+          msg ("Miraculously, the defibrillator lived up to its promise, and Bob is now alive again. He says his head feels kind of fuzzy.")
+          SetObjectFlagOn (Bob, "alive")
+        </item>
+      </useon>
     </object>
     <object name="lamp">
       <inherit name="editor_object" />
@@ -82,6 +96,11 @@
       <switchedon />
       <switchedondesc>The lamp is on.</switchedondesc>
       <switchedoffdesc>The lamp is off.</switchedoffdesc>
+    </object>
+    <object name="defibrillator">
+      <inherit name="editor_object" />
+      <look>A heart defibrillator can magically revive a dead person, if all those hospital dramas are to be believed.</look>
+      <take />
     </object>
   </object>
   <object name="kitchen">
