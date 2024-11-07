@@ -147,7 +147,14 @@
     <object name="fridge">
       <inherit name="editor_object" />
       <inherit name="container_closed" />
-      <look>A big old refrigerator sits in the corner, humming quietly.</look>
+      <look type="script">
+        if (fridge.isopen) {
+          msg ("The fridge is open, casting its light out into the gloomy kitchen.")
+        }
+        else {
+          msg ("A big old refrigerator sits in the corner, humming quietly.")
+        }
+      </look>
       <feature_container />
       <listchildren />
       <listchildrenprefix>In the fridge you find</listchildrenprefix>
