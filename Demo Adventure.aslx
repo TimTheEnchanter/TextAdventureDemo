@@ -8,6 +8,7 @@
     <firstpublished>2024</firstpublished>
     <author>James Parrott</author>
     <category>Surreal</category>
+    <feature_asktell />
   </game>
   <object name="lounge">
     <inherit name="editor_room" />
@@ -86,6 +87,16 @@
           revive bob
         </item>
       </useon>
+      <ask type="scriptdictionary">
+        <item key="heart attack cardiac arrest">
+          if (GetBoolean(Bob, "alive")) {
+            msg ("Well, one moment I was sitting there, feeling pretty happy with myself after eating my afternoon snack - a cheeseburger, pizza and ice cream pie, smothered in bacon, which I’d washed down with a bucket of coffee and six cans of Red Bull - when all of a sudden, I was in terrible pain, and then everything was peaceful. Then you came along.")
+          }
+          else {
+            msg ("He's dead, Jim!")
+          }
+        </item>
+      </ask>
     </object>
     <object name="lamp">
       <inherit name="editor_object" />
