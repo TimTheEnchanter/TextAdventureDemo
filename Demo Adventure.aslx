@@ -181,6 +181,22 @@
         <take />
       </object>
     </object>
+    <object name="cupboard">
+      <inherit name="editor_object" />
+      <inherit name="container_closed" />
+      <feature_container />
+      <listchildren />
+      <listchildrenprefix>The cupboard is bare except for</listchildrenprefix>
+      <object name="tin of beans">
+        <inherit name="editor_object" />
+        <take />
+        <usedefaultprefix />
+      </object>
+      <object name="bag of rice">
+        <inherit name="editor_object" />
+        <take />
+      </object>
+    </object>
   </object>
   <verb>
     <property>watch</property>
