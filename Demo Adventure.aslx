@@ -49,14 +49,16 @@
     </object>
     <object name="table">
       <inherit name="editor_object" />
+      <inherit name="surface" />
       <look>A non-descript wooden table.</look>
-    </object>
-    <object name="newspaper">
-      <inherit name="editor_object" />
-      <look>The Sunday Edition of the Whoville Examiner.</look>
-      <read>Who writes this junk?</read>
-      <take />
-      <takemsg>You fold the newspaper and place it neatly under your arm</takemsg>
+      <feature_container />
+      <object name="newspaper">
+        <inherit name="editor_object" />
+        <look>The Sunday Edition of the Whoville Examiner.</look>
+        <read>Who writes this junk?</read>
+        <take />
+        <takemsg>You fold the newspaper and place it neatly under your arm</takemsg>
+      </object>
     </object>
     <object name="wallpaper">
       <inherit name="editor_object" />
@@ -107,14 +109,23 @@
       <switchedondesc>The lamp is on.</switchedondesc>
       <switchedoffdesc>The lamp is off.</switchedoffdesc>
     </object>
-    <object name="defibrillator">
+    <object name="box">
       <inherit name="editor_object" />
-      <look>A heart defibrillator can magically revive a dead person, if all those hospital dramas are to be believed.</look>
-      <take />
-      <feature_usegive />
-      <use type="script">
-        revive bob
-      </use>
+      <inherit name="container_closed" />
+      <inherit name="container_lockable" />
+      <feature_container />
+      <keycount type="int">1</keycount>
+      <key type="object">key</key>
+      <listchildren />
+      <object name="defibrillator">
+        <inherit name="editor_object" />
+        <look>A heart defibrillator can magically revive a dead person, if all those hospital dramas are to be believed.</look>
+        <take />
+        <feature_usegive />
+        <use type="script">
+          revive bob
+        </use>
+      </object>
     </object>
   </object>
   <object name="kitchen">
@@ -196,6 +207,10 @@
         <inherit name="editor_object" />
         <take />
       </object>
+    </object>
+    <object name="key">
+      <inherit name="editor_object" />
+      <take />
     </object>
   </object>
   <verb>
