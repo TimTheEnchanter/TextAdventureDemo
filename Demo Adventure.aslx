@@ -157,12 +157,17 @@
     </script>
   </command>
   <function name="revive bob">
-    if (GetBoolean(Bob, "alive")) {
-      msg ("Bob is alive now, so I wouldn't recommend using that.")
+    if (game.pov.parent = lounge) {
+      if (GetBoolean(Bob, "alive")) {
+        msg ("Bob is alive now, so I wouldn't recommend using that.")
+      }
+      else {
+        msg ("Miraculously, the defibrillator lived up to its promise, and Bob is now alive again. He says his head feels kind of fuzzy.")
+        SetObjectFlagOn (Bob, "alive")
+      }
     }
     else {
-      msg ("Miraculously, the defibrillator lived up to its promise, and Bob is now alive again. He says his head feels kind of fuzzy.")
-      SetObjectFlagOn (Bob, "alive")
+      msg ("Nothing happens as Bob is presently located in the lounge.")
     }
   </function>
 </asl>
