@@ -144,6 +144,35 @@
       <inherit name="editor_object" />
       <weight type="int">1000</weight>
     </object>
+    <object name="fridge">
+      <inherit name="editor_object" />
+      <inherit name="container_closed" />
+      <look>A big old refrigerator sits in the corner, humming quietly.</look>
+      <feature_container />
+      <listchildren />
+      <object name="milk">
+        <inherit name="editor_object" />
+        <usedefaultprefix type="boolean">false</usedefaultprefix>
+        <prefix>some</prefix>
+        <look>Good ole' 2% milk.</look>
+        <take />
+      </object>
+      <object name="cheese">
+        <inherit name="editor_object" />
+        <look>A rather unassuming block of cheddar.</look>
+        <usedefaultprefix type="boolean">false</usedefaultprefix>
+        <prefix>some</prefix>
+        <scenery />
+        <take />
+      </object>
+      <object name="beer">
+        <inherit name="editor_object" />
+        <look>Lucky Lager.........gross.</look>
+        <usedefaultprefix type="boolean">false</usedefaultprefix>
+        <prefix>some</prefix>
+        <take />
+      </object>
+    </object>
   </object>
   <verb>
     <property>watch</property>
