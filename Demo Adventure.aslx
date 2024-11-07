@@ -100,6 +100,10 @@
       <inherit name="editor_object" />
       <look>A heart defibrillator can magically revive a dead person, if all those hospital dramas are to be believed.</look>
       <take />
+      <feature_usegive />
+      <use type="script">
+        revive bob
+      </use>
     </object>
   </object>
   <object name="kitchen">
@@ -153,7 +157,12 @@
     </script>
   </command>
   <function name="revive bob">
-    msg ("Miraculously, the defibrillator lived up to its promise, and Bob is now alive again. He says his head feels kind of fuzzy.")
-    SetObjectFlagOn (Bob, "alive")
+    if (GetBoolean(Bob, "alive")) {
+      msg ("Bob is alive now, so I wouldn't recommend using that.")
+    }
+    else {
+      msg ("Miraculously, the defibrillator lived up to its promise, and Bob is now alive again. He says his head feels kind of fuzzy.")
+      SetObjectFlagOn (Bob, "alive")
+    }
   </function>
 </asl>
