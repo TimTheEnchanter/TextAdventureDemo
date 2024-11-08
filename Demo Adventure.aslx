@@ -212,6 +212,32 @@
       <inherit name="editor_object" />
       <take />
     </object>
+    <object name="window">
+      <inherit name="editor_object" />
+      <inherit name="openable" />
+      <feature_container />
+      <openscript type="script">
+        HelperOpenObject (window)
+        if (Contains (kitchen,bee)) {
+          msg ("You open the window. Not much happens.")
+        }
+        else {
+          msg ("You open the window and a bee flies into the kitchen.")
+          MoveObject (bee, kitchen)
+        }
+      </openscript>
+      <closescript type="script">
+        msg ("You close the window.")
+        HelperCloseObject (window)
+      </closescript>
+    </object>
+    <object name="apple">
+      <inherit name="editor_object" />
+      <inherit name="edible" />
+      <look>Yep it's definitely an apple.</look>
+      <feature_edible />
+      <eatmsg>You eat the apple. Tasty.</eatmsg>
+    </object>
   </object>
   <verb>
     <property>watch</property>
@@ -235,6 +261,12 @@
       }
     </script>
   </command>
+  <object name="hidden">
+    <inherit name="editor_room" />
+    <object name="bee">
+      <inherit name="editor_object" />
+    </object>
+  </object>
   <function name="revive bob">
     if (game.pov.parent = lounge) {
       if (GetBoolean(Bob, "alive")) {
