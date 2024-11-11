@@ -20,8 +20,8 @@
   <object name="lounge">
     <inherit name="editor_room" />
     <isroom />
-    <dropdestination type="object">lounge</dropdestination>
     <description>This is a very bland lounge with an old beige carpet and beige wallpaper.</description>
+    <dropdestination type="object">lounge</dropdestination>
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
@@ -37,6 +37,9 @@
         <value>telly</value>
       </alt>
       <look>The TV is an old model, possibly 20 years old. It is currently showing an old western.</look>
+      <feature_switchable />
+      <switchedondesc>It is currently showing an old western.</switchedondesc>
+      <switchedoffdesc>It is currently switched off.</switchedoffdesc>
       <watch type="script">
         if (IsSwitchedOn(TV)) {
           msg ("You watch for a few minutes. As your will to live slowly ebbs away, you remember that you’ve always hated watching westerns.")
@@ -45,9 +48,6 @@
           msg ("You watch for a few minutes, thinking that the latest episode of ‘Big Brother’ is even more boring than usual. You then realise that the TV is in fact switched off.")
         }
       </watch>
-      <feature_switchable />
-      <switchedondesc>It is currently showing an old western.</switchedondesc>
-      <switchedoffdesc>It is currently switched off.</switchedoffdesc>
     </object>
     <object name="sofa">
       <inherit name="editor_object" />
@@ -80,6 +80,9 @@
     <object name="Bob">
       <inherit name="editor_object" />
       <inherit name="male" />
+      <usedefaultprefix type="boolean">false</usedefaultprefix>
+      <alias>Bob</alias>
+      <feature_usegive />
       <look type="script">
         if (GetBoolean(Bob, "alive")) {
           msg ("Bob is sitting up, appearing to feel somewhat under the weather")
@@ -88,9 +91,6 @@
           msg ("Bob is lying on the floor, a lot more still than usual.")
         }
       </look>
-      <usedefaultprefix type="boolean">false</usedefaultprefix>
-      <alias>Bob</alias>
-      <feature_usegive />
       <useon type="scriptdictionary">
         <item key="defibrillator">
           revive bob
@@ -122,8 +122,8 @@
       <inherit name="container_lockable" />
       <feature_container />
       <keycount type="int">1</keycount>
-      <key type="object">key</key>
       <listchildren />
+      <key type="object">key</key>
       <object name="defibrillator">
         <inherit name="editor_object" />
         <look>A heart defibrillator can magically revive a dead person, if all those hospital dramas are to be believed.</look>
@@ -155,7 +155,7 @@
       <inherit name="plural" />
       <weight type="int">250</weight>
       <look type="script">
-        msg ( "A carton of eggs, weighing " + eggs.weight + " grams.")
+        msg ("A carton of eggs, weighing " + eggs.weight + " grams.")
       </look>
     </object>
     <object name="sugar">
@@ -165,6 +165,9 @@
     <object name="fridge">
       <inherit name="editor_object" />
       <inherit name="container_closed" />
+      <feature_container />
+      <listchildren />
+      <listchildrenprefix>In the fridge you find</listchildrenprefix>
       <look type="script">
         if (fridge.isopen) {
           msg ("The fridge is open, casting its light out into the gloomy kitchen.")
@@ -173,9 +176,6 @@
           msg ("A big old refrigerator sits in the corner, humming quietly.")
         }
       </look>
-      <feature_container />
-      <listchildren />
-      <listchildrenprefix>In the fridge you find</listchildrenprefix>
       <object name="milk">
         <inherit name="editor_object" />
         <usedefaultprefix type="boolean">false</usedefaultprefix>
@@ -293,7 +293,9 @@
     <interval>20</interval>
     <enabled />
     <script>
-      msg ("The bee buzzes past you. Pesky bee.")
+      if (game.pov.parent = kitchen) {
+        msg ("The bee buzzes past you. Pesky bee.")
+      }
     </script>
   </timer>
 </asl>
