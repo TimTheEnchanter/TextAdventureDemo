@@ -9,6 +9,13 @@
     <author>James Parrott</author>
     <category>Surreal</category>
     <feature_asktell />
+    <score type="int">0</score>
+    <statusattributes type="stringdictionary">
+      <item>
+        <key>score</key>
+        <value>Score: !/10</value>
+      </item>
+    </statusattributes>
   </game>
   <object name="lounge">
     <inherit name="editor_room" />
@@ -224,6 +231,7 @@
         else {
           msg ("You open the window and a bee flies into the kitchen.")
           MoveObject (bee, kitchen)
+          EnableTimer (bee timer)
         }
       </openscript>
       <closescript type="script">
@@ -281,4 +289,11 @@
       msg ("Nothing happens as Bob is presently located in the lounge.")
     }
   </function>
+  <timer name="bee timer">
+    <interval>20</interval>
+    <enabled />
+    <script>
+      msg ("The bee buzzes past you. Pesky bee.")
+    </script>
+  </timer>
 </asl>
