@@ -25,6 +25,7 @@
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
+      <turns type="string"></turns>
     </object>
     <exit alias="south" to="kitchen">
       <inherit name="southdirection" />
@@ -275,6 +276,12 @@
       <inherit name="editor_object" />
     </object>
   </object>
+  <turnscript>
+    <enabled />
+    <script>
+      player.turns = player.turns + 1
+    </script>
+  </turnscript>
   <function name="revive bob">
     if (game.pov.parent = lounge) {
       if (GetBoolean(Bob, "alive")) {
